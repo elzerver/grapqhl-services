@@ -5,18 +5,26 @@ package graph
 
 import (
 	"context"
-	"fmt"
 
 	"github.com/elzerver/graphql-services/graph/generated"
 	"github.com/elzerver/graphql-services/graph/model"
 )
 
-func (r *mutationResolver) CreateTodo(ctx context.Context, input model.NewTodo) (*model.Todo, error) {
-	panic(fmt.Errorf("not implemented"))
+func (r *mutationResolver) CreateUser(ctx context.Context, name string) (*model.User, error) {
+	// panic(fmt.Errorf("not implemented"))
+	var id string
+	id = "1"
+	user := &model.User{
+		ID:   id,
+		Name: &name,
+	}
+	r.user = append(r.user, user)
+	return user, nil
 }
 
-func (r *queryResolver) Todos(ctx context.Context) ([]*model.Todo, error) {
-	panic(fmt.Errorf("not implemented"))
+func (r *queryResolver) Me(ctx context.Context) ([]*model.User, error) {
+	// panic(fmt.Errorf("not implemented"))
+	return r.user, nil
 }
 
 // Mutation returns generated.MutationResolver implementation.
