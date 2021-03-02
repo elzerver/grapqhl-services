@@ -7,5 +7,7 @@ import "github.com/elzerver/graphql-services/graph/model"
 // It serves as dependency injection for your app, add any dependencies you require here.
 
 type Resolver struct {
-	user []*model.User
+	user      []*model.User
+	post      []*model.Post
+	workspace []*model.Workspace
 }

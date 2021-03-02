@@ -7,7 +7,27 @@ type Post struct {
 	Author *User   `json:"author"`
 }
 
+type PostInput struct {
+	Title  *string    `json:"title"`
+	Author *UserInput `json:"author"`
+}
+
 type User struct {
-	ID   string  `json:"id"`
-	Name *string `json:"name"`
+	ID    string  `json:"id"`
+	Name  *string `json:"name"`
+	Posts []*Post `json:"posts"`
+}
+
+type UserInput struct {
+	Name string `json:"name"`
+}
+
+type Workspace struct {
+	WorkspaceID int `json:"workspaceID"`
+	UserID      int `json:"userID"`
+}
+
+type CreateEdgeSitesWorkspace struct {
+	WorkspaceID int `json:"workspaceID"`
+	UserID      int `json:"userID"`
 }

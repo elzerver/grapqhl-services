@@ -1,0 +1,14 @@
+type Character {
+   name: String!
+   appearsIn: [Episode!]!
+}
+
+type Book {
+   id: String
+   name: String
+   genre: String
+}
+
+type Query {
+
+}
